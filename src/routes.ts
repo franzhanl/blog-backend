@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import multer from 'multer'
+import { Request, Response } from 'express'
 
 import { isAuthenticated } from './middleware/isAuthenticated'
 // User
@@ -20,6 +21,11 @@ import uploadConfig from './config/multer'
 const router = Router()
 
 const upload = multer(uploadConfig.upload('./tmp'))
+
+//TESTE
+router.get('/teste', (req: Request, res: Response) => {
+    return res.json({teste: 'ok'})
+})
 
 //USER
 router.get('/users', isAuthenticated, new ListUserController().handle)
