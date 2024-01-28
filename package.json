@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server",
     "build": "tsc",
-    "start": "node src/server"
+    "start": "node build/server.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
